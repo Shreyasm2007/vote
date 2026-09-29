@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Can You Vote?</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: black;
+        }
+
+        .box {
+            margin: 150px auto 0;
+            width: 450px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        input {
+            padding: 5px;
+            margin: 3px;
+        }
+
+        button {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        #answer {
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        .notice {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Check Your Voting Eligibility</h1>
+
+    <div class="box">
+
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="number" id="age" placeholder="Enter your age">
+        <br>
+        <input type="text" id="country" placeholder="Enter your country">
+        <button onclick="checkVote()">Submit</button>
+
+        <h3>Answer:</h3>
+        <p id="answer"></p>
+
+        <h3>Notice:</h3>
+
+        <div class="notice">
+            Indian citizens who are at least 18 years old can vote.
+        </div>
+
+    </div>
+
+    <script>
+        function checkVote() {
+
+            let name = document.getElementById("name").value;
+            let age = Number(document.getElementById("age").value);
+            let country = document.getElementById("country").value;
+
+            if (name == "" || age == "" || country == "") {
+                document.getElementById("answer").innerHTML =
+                    "Please enter all details.";
+            }
+            else if (country.toLowerCase() == "india" && age >= 18) {
+                document.getElementById("answer").innerHTML =
+                    "Yes, " + name + " can vote.";
+            }
+            else {
+                document.getElementById("answer").innerHTML =
+                    "Sorry, " + name + " cannot vote.";
+            }
+        }
+    </script>
+    <style>
+    body {
+        margin: 0;
+        font-family: Georgia, serif;
+
+        background-image: url("https://tse4.mm.bing.net/th/id/OIP.KZXxIyRw7zw3sIytSfJKtwHaE0?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        text-align: center;
+    }
+    .box {
+        margin: 80px auto 0;
+        width: 600px;
+        padding: 25px;
+
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 15px;
+    }
+
+    h1 {
+        color: black;
+        font-size: 35px;
+    }
+
+    input {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #777;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: #2878d7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #answer {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .notice {
+        font-weight: bold;
+        line-height: 1.5;
+    }
+</style>
+
+</body>
+</html>
